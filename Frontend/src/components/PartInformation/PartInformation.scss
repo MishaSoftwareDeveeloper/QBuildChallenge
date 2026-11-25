@@ -1,0 +1,48 @@
+.info-panel {
+    flex: 1;
+    padding: 48px 24px 24px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+  
+  .info-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 13px;
+  }
+  
+  .parent-child-part {
+    color: #e56b96;
+  }
+  
+  .current-part {
+    color: #3cbf66;
+  }
+  
+  .info-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .populate-button {
+    background: #6b6b6b;
+    color: #d7d7d7;
+    border: 1px solid #2f2f2f;
+    border-radius: 2px;
+    padding: 6px 14px;
+    cursor: pointer;
+  
+    &:disabled {
+      opacity: 0.55;
+      cursor: default;
+    }
+  }
+  
+  .status-error {
+    color: #ff8a8a;
+    max-width: 520px;
+  }

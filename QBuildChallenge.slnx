@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/Backend/">
+    <File Path="docker-compose.yml" />
+    <Project Path="Backend/QBuild.API/QBuild.API.csproj" />
+    <Project Path="Backend/QBuild.Business/QBuild.Business.csproj" />
+    <Project Path="Backend/QBuild.DataAccess/QBuild.DataAccess.csproj" />
+    <Project Path="Backend/QBuild.Models/QBuild.Models.csproj" />
+  </Folder>
+  <Folder Name="/Tests/">
+    <Project Path="Tests/QBuild.Tests/QBuild.Tests.csproj" />
+  </Folder>
+</Solution>

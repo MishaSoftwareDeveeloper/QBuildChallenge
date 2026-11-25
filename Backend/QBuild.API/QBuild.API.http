@@ -1,0 +1,14 @@
+@QBuild.API_HostAddress = http://localhost:8080
+
+GET {{QBuild.API_HostAddress}}/api/bom/tree
+Accept: application/json
+
+###
+
+GET {{QBuild.API_HostAddress}}/api/bom/components/VALVE
+Accept: application/json
+
+###
+
+GET {{QBuild.API_HostAddress}}/api/bom/components/GUIDE_RH
+Accept: application/json

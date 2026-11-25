@@ -1,0 +1,20 @@
+
+services:
+  qbuild-api:
+    build:
+      context: .
+      dockerfile: Backend/QBuild.API/DockerFile
+
+    container_name: qbuild-api
+
+    ports:
+      - "8080:8080"
+
+    environment:
+      ASPNETCORE_URLS: http://+:8080
+      ASPNETCORE_ENVIRONMENT: Production
+
+    volumes:
+       - ./Data:/app/Data:ro
+
+    restart: unless-stopped

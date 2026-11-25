@@ -1,0 +1,39 @@
+﻿
+# Build stage
+FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
+
+WORKDIR /src
+
+# Copy project files
+COPY Backend/QBuild.Models/QBuild.Models.csproj Backend/QBuild.Models/
+COPY Backend/QBuild.DataAccess/QBuild.DataAccess.csproj Backend/QBuild.DataAccess/
+COPY Backend/QBuild.Business/QBuild.Business.csproj Backend/QBuild.Business/
+COPY Backend/QBuild.API/QBuild.API.csproj Backend/QBuild.API/
+
+# Restore dependencies
+RUN dotnet restore Backend/QBuild.API/QBuild.API.csproj
+
+# Copy source code
+COPY Backend/ Backend/
+
+# Copy CSV files to the path expected by QBuild.API.csproj
+COPY Data/ /src/Data/
+
+# Publish application
+RUN dotnet publish Backend/QBuild.API/QBuild.API.csproj \
+    -c Debug \
+    -o /app/publish \
+    /p:UseAppHost=false
+
+# Runtime stage
+FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS final
+
+WORKDIR /app
+
+COPY --from=build /app/publish .
+
+ENV ASPNETCORE_URLS=http://+:8080
+
+EXPOSE 8080
+
+ENTRYPOINT ["dotnet", "QBuild.API.dll"]

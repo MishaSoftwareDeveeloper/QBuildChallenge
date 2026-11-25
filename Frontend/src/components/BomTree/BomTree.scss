@@ -1,0 +1,17 @@
+.tree-panel {
+    width: 250px;
+    min-width: 220px;
+    background: #141414;
+    border-right: 4px solid #5a5a5a;
+    margin: 8px 0 8px 8px;
+  }
+  .tree-scroll {
+    height: 100%;
+    overflow: auto;
+    padding: 8px 0;
+  }
+  
+  .tree-placeholder {
+    color: #888;
+    padding: 12px;
+  }

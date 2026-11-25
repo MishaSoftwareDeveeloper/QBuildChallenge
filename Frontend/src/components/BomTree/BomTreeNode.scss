@@ -1,0 +1,60 @@
+
+.tree-row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    border: 0;
+    background: transparent;
+    color: #e6e6e6;
+    text-align: left;
+    cursor: pointer;
+    height: 20px;
+    font-size: 12px;
+  
+    &:hover {
+      background: #2a2a2a;
+    }
+  
+    &.selected {
+      background: #cfcfcf;
+      color: #111;
+  
+      .tree-toggle {
+        &.collapsed {
+          border-left-color: #111;
+        }
+  
+        &.expanded {
+          border-top-color: #111;
+        }
+      }
+    }
+  }
+  
+  .tree-toggle {
+    width: 10px;
+    height: 10px;
+    flex: 0 0 10px;
+    display: inline-block;
+  
+    &.collapsed {
+      border-left: 6px solid #d0d0d0;
+      border-top: 4px solid transparent;
+      border-bottom: 4px solid transparent;
+    }
+  
+    &.expanded {
+      border-top: 6px solid #d0d0d0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+    }
+  
+    &.leaf {
+      visibility: hidden;
+    }
+  }
+  
+  .tree-label {
+    white-space: nowrap;
+  }
